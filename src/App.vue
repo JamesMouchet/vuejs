@@ -2,16 +2,8 @@
   <div id="app">
     <img src="./assets/logo.gif">
     <h1>{{ msg }}</h1>
-    <h2 v-bind:class="{ red: active }">Machine 1</h2> 
-    <label class="switch">
-      <input type="checkbox" v-model="active">
-      <span class="slider"></span>
-    </label>
-    <h2>Machine 2</h2> 
-      <label class="switch">
-        <input type="checkbox">
-        <span class="slider"></span>
-      </label>
+    <h2 class="green">Machine 1</h2> 
+    <h2 class="grey">Machine 2</h2> 
   </div>
 </template>
 
@@ -28,8 +20,12 @@ export default {
 </script>
 
 <style lang="scss">
-.red {
-  color: red;
+.grey {
+  color: gray;
+}
+.green {
+  color: green;
+  font-weight: bold;
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
