@@ -2,16 +2,11 @@
   <div id="app">
     <img src="./assets/logo.gif">
     <h1>{{ msg }}</h1>
-    <h2 v-bind:class="{ red: active }">Machine 1</h2> 
-    <label class="switch">
-      <input type="checkbox" v-model="active">
-      <span class="slider"></span>
-    </label>
-    <h2>Machine 2</h2> 
-      <label class="switch">
-        <input type="checkbox">
-        <span class="slider"></span>
-      </label>
+    <div v-for="machine in machines">
+      <h2 :class="{ red: machine.statut }">{{machine.nom}}</h2>
+      <toggle-button @change="machine.statut = !machine.statut"/>
+
+    </div>
   </div>
 </template>
 
@@ -21,7 +16,11 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
-      active: false
+      active: false,
+      machines: [
+        {nom: "machine1", statut: false},
+        {nom: "machine2", statut: false}
+      ]
     }
   }
 }
