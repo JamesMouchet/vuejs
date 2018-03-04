@@ -1,12 +1,7 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.gif">
-    <h1>{{ msg }}</h1>
-    <div v-for="machine in machines">
-      <h2 :class="{ red: machine.statut }">{{machine.nom}}</h2>
-      <toggle-button @change="machine.statut = !machine.statut"/>
-
-    </div>
+    <en-tete></en-tete>
+    <machine></machine>
   </div>
 </template>
 
@@ -15,12 +10,7 @@ export default {
   name: 'app',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App',
-      active: false,
-      machines: [
-        {nom: "machine1", statut: false},
-        {nom: "machine2", statut: false}
-      ]
+
     }
   }
 }
